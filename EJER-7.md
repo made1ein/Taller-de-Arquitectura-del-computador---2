@@ -1,6 +1,6 @@
 # Ejercicio 7 – Serie de números alternados
 
-**Responsable:** Madelein · **Revisor (PR):** Alejandra
+**Responsable:** Alejandra · **Revisor (PR):** Alonso
 
 
 
