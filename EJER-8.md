@@ -1,17 +1,12 @@
-### Para el Ejercicio 8 (`EJER-8.md`):
-
-```markdown
 # Ejercicio 8 – Suma de números impares
 
 **Responsable:** Madelein · **Revisor (PR):** Alejandra
 
----
 
 ## A · Enunciado
 
 Sume solo los números impares que se ingresen por teclado. El programa deja de pedir números cuando se ingresa 0. Al final muestre la suma. Ejemplo: 3, 4, 5, 8, 7, 0 -> Suma = 15.
 
----
 
 ## B · Código desarrollado
 
