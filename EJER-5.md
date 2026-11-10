@@ -68,7 +68,9 @@ Después armé un bucle con la etiqueta `leer`. Al inicio comparo con `beq` si e
 Cada número que lee lo sumo al acumulador con `add s0, s0, a0`, le sumo 1 al contador con `addi` y regreso con `j leer` para pedir el siguiente.
 
 Cuando se leyeron los cuatro números, en `mostrar` imprimo `El resultado es: ` con `ecall 4`, copio la suma de `s0` a `a0` y la muestro con `ecall 1`. Finalmente, utilicé `ecall 10` para terminar la ejecución del programa.
+
 ---
+
 ## D · Resultado esperado
 
 Para comprobar el funcionamiento del programa, ingresamos los números 3, 5, 2 y 10.
