@@ -1,6 +1,6 @@
 # Ejercicio 1: Leer un número y mostrarlo
 
-**Responsable:** D’alessandro · **Revisor (PR):** Madelein
+**Responsable:** D’alessandro · **Revisor (PR):** Alonso
 
 ---
 
