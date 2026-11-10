@@ -1,6 +1,6 @@
 ## Ejercicio 10: Patrón de letras
 
-**Responsable:** [Nombre] · **Revisor (PR):** [Nombre]
+**Responsable:** Alonso · **Revisor (PR):** Alejandra
 
 ---
 
