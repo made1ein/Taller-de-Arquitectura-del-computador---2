@@ -1,19 +1,34 @@
 Ejercicio 8 – Suma de números impares
+A · Enunciado
+Sume solo los números impares que se ingresen por teclado. El programa deja de pedir números cuando se ingresa 0. Al final muestre la suma. Ejemplo: 3, 4, 5, 8, 7, 0 -> Suma = 15.
 
-¿Qué se debe hacer?
+B · Código desarrollado
+.data
+    prompt: .asciz "Ingrese un numero (0 para terminar): "
+    res:    .asciz "Suma = "
+.text
+.globl main
+main:
+    li s0, 0
+bucle_impares:
+    li a7, 4
+    la a0, prompt
+    ecall
+    li a7, 5
+    ecall
+    mv t1, a0
+    beqz t1, mostrar_suma
+    andi t2, t1, 1
+    beqz t2, bucle_impares
+    add s0, s0, t1
+    j bucle_impares
+mostrar_suma:
+    li a7, 4
+    la a0, res
+    ecall
+    li a7, 1
+    mv a0, s0
+    ecall
 
-Solicitar números hasta que el usuario ingrese 0. Solo se deben sumar los números impares.
-
-Archivo: ej08.asm
-
-Aquí debes colocar:
-
-Un bucle para solicitar los números.
-
-Una condición para identificar los impares.
-
-Una variable o registro que acumule la suma.
-
-La condición que finaliza el programa cuando se ingresa 0.
-
-La impresión del resultado final.
+    li a7, 10
+    ecall
