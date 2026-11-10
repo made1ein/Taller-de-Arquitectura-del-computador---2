@@ -73,10 +73,10 @@ En esta última parte utilizaremos bucles anidados para generar figuras y patron
 
 | Integrante | Ejercicios asignados |
 |---|---|
-| Integrante 1 | Pendiente |
-| Integrante 2 | Pendiente |
-| Integrante 3 | Pendiente |
-| Integrante 4 | Pendiente |
+| Luis Muñoz         | 1 - 2 - 5 |
+| Madelein Rojas     | 3 - 4 - 6 |
+| Alejandra Quispe   | 7 - 8     |
+| Alonso Evangelista | 9 - 10    |
 
 Cada integrante será responsable de desarrollar sus ejercicios, comprobar su funcionamiento en RARS y subir los archivos correspondientes al repositorio.
 
