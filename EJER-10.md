@@ -102,11 +102,11 @@ fin:
 
 ### C · Explicación del procedimiento
 
-Primero mostré un mensaje con `ecall 4`, leí n con `ecall 5` y lo guardé en `s0` con `mv`. Como el alfabeto solo tiene 26 letras, validé con `blt` y `bgt` que n estuviera entre 1 y 26. Si no lo está, el programa muestra un mensaje de error y termina.
+Primero pedí n con `ecall 4` y `ecall 5` y lo guardé en `s0`. Como solo hay 26 letras, puse una validación con `blt` y `bgt` para que n esté entre 1 y 26, si no está sale un mensaje de error
 
-Para generar las letras aproveché que cada carácter es un número (su código ASCII, `'A'` = 65). El bucle externo usa `t0` como número de fila (i = 0, 1, 2, …). Cada fila empieza en la letra `'A' + i`, que calculé con `add t1, t1, t0`. Así la fila 0 empieza en A, la fila 2 en C, etc.
+Para las letras usé que cada carácter en realidad es un número (su código ASCII), entonces `'A' + 1` es `'B'`, `'A' + 2` es `'C'` y así. Con eso, cada fila empieza en `'A'` más el número de fila (`add t1, t1, t0`), por eso la primera empieza en A, la segunda en B, etc
 
-El bucle interno imprime la letra de `t1` con `ecall 11`. Si esa letra ya es `'A'`, sale con `beq`; si no, resta 1 con `addi t1, t1, -1` para pasar a la letra anterior (C → B → A). Al terminar cada fila imprimo un salto de línea, aumento `t0` y regreso con `j` al bucle externo. Por último, terminé el programa con `ecall 10`.
+En el bucle de adentro imprimo la letra con `ecall 11` y le resto 1 con `addi t1, t1, -1` para ir hacia atrás hasta llegar a la A, ahí paro con `beq`. Después imprimo el salto de línea, paso a la siguiente fila y por último cierro con `ecall 10`
 
 ---
 
@@ -122,4 +122,4 @@ DCBA
 EDCBA
 ```
 
-**Comprobación:** Para n = 5 el patrón termina en la fila EDCBA. La ejecución en RARS confirmó esta salida. También se probó con n = 26 (última fila `ZYXWVUTSRQPONMLKJIHGFEDCBA`) y con n = 0 y n = 27, donde se muestra el mensaje de error.
+**Comprobación:** Con n = 5 la última fila tiene que ser EDCBA. La ejecución en RARS debe confirmar esta salida
