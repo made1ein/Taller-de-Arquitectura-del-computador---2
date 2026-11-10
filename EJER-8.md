@@ -1,6 +1,6 @@
 # Ejercicio 8 – Suma de números impares
 
-**Responsable:** Madelein · **Revisor (PR):** Alejandra
+**Responsable:** Alejandra · **Revisor (PR):** Madelein
 
 
 ## A · Enunciado
