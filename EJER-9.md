@@ -1,6 +1,6 @@
 ## Ejercicio 9: Rectángulo de asteriscos
 
-**Responsable:** [Nombre] · **Revisor (PR):** [Nombre]
+**Responsable:** Alonso · **Revisor (PR):** Alejandra
 
 ---
 
