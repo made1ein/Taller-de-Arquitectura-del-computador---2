@@ -1,10 +1,22 @@
-Ejercicio 1: Leer un número y mostrarlo
-Responsable: D’alessandro · Revisor (PR): Madelein
-A · Enunciado
-Escriba un programa que pida un número con el mensaje “Ingrese numero: “ y luego lo muestre con el mensaje “El numero es: “. Use .data para los mensajes y termine el programa con ecall.
-Se debe usar la notación ABI para los registros y mostrar mensajes claros al pedir los datos.
-B · Código desarrollado
-Archivo: ej01.asm
+# Ejercicio 1: Leer un número y mostrarlo
+
+**Responsable:** D’alessandro · **Revisor (PR):** Madelein
+
+---
+
+## A · Enunciado
+
+Desarrollar un programa que solicite un número al usuario con el mensaje `Ingrese numero: ` y después muestre el mismo valor acompañado del mensaje `El numero es: `.
+
+Se debe utilizar `.data` para declarar los mensajes, emplear registros con notación ABI y finalizar el programa utilizando `ecall`.
+
+---
+
+## B · Código desarrollado
+
+**Archivo:** `ej01.asm`
+
+```asm
 .data
     msg_in:  .asciz "Ingrese numero: "
     msg_out: .asciz "El numero es: "
@@ -27,18 +39,37 @@ main:
     la a0, msg_out
     ecall
 
+    # Imprimimos el numero ingresado
     li a7, 1
     mv a0, s0
     ecall
 
-    
+    # Finalizamos el programa
     li a7, 10
     ecall
-C · Explicación del procedimiento
-Primero guardé los dos mensajes en .data con .asciz, para que cada cadena termine en cero y ecall 4 sepa dónde acaba. Luego imprimí “Ingrese numero: “ cargando 4 en a7 y la dirección del mensaje en a0 con la.
-Después leí el número con (ecall) 5, que lo deja en a0, lo pasé a s0 con (mv) porque si lo dejaba en a0 se me borraba con el siguiente (ecall), que también usa a0 para el mensaje.
-Luego imprimí “El numero es: “ con ecall 4, volví a poner el número en a0 desde s0 y lo mostré con ecall 1. Al final cierro el programa con ecall 10.
-D · Resultado esperado
+```
+
+---
+
+## C · Explicación del procedimiento
+
+Primero declaré los dos mensajes en la sección `.data` utilizando `.asciz`, que permite guardar las cadenas de texto. Después mostré el mensaje `Ingrese numero: ` con `ecall 4`, colocando la dirección del texto en el registro `a0`.
+
+Luego utilicé `ecall 5` para leer el número ingresado y lo guardé en `s0` mediante `mv`. Esto permite conservar el valor, ya que el registro `a0` también se utiliza para imprimir los mensajes.
+
+Una vez guardado el número, mostré el mensaje `El numero es: ` utilizando nuevamente `ecall 4`. Después copié el valor de `s0` a `a0` para imprimirlo con `ecall 1`.
+
+Finalmente, utilicé `ecall 10` para terminar la ejecución del programa.
+
+---
+
+## D · Resultado esperado
+
+Para comprobar el funcionamiento del programa, ingresamos el número 7.
+
+```text
 Ingrese numero: 7
 El numero es: 7
-Comprobación: con cualquier número que se ingrese, el programa debe mostrar exactamente el mismo valor después del mensaje “El número es: “, en RARS debe salir esta salida.
+```
+
+**Comprobación:** El programa debe mostrar el mismo número que ingresó el usuario. En este ejemplo se utiliza el valor 7, pero también puede funcionar con otros números enteros.
