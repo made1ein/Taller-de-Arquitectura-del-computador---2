@@ -86,11 +86,11 @@ fin:
 
 ### C · Explicación del procedimiento
 
-Primero mostré un mensaje con `ecall 4` y leí el número de filas con `ecall 5`. Como el valor leído queda en `a0` y ese registro se vuelve a usar en el siguiente `ecall`, lo copié a `s0` con `mv`. Hice lo mismo con el número de columnas y lo guardé en `s1`.
+Primero pedí las filas y las columnas con `ecall 4` para el mensaje y `ecall 5` para leer el número. Cada valor lo pasé a `s0` y `s1` con `mv`, porque si lo dejaba en `a0` se me borraba con el siguiente `ecall`
 
-Después armé un bucle doble. El bucle externo usa `t0` como contador de filas y termina con `bge t0, s0, fin` cuando `t0` llega a f. Dentro de él, `t1` empieza en 0 en cada fila nueva y cuenta las columnas. Por cada columna imprimí un `*` con `ecall 11` y aumenté el contador con `addi`.
+Luego hice dos bucles, uno dentro del otro. El de afuera va contando las filas con `t0` y el de adentro las columnas con `t1`, que vuelve a 0 cada vez que empieza una fila nueva. En el de adentro voy imprimiendo un `*` con `ecall 11` hasta llegar a c
 
-Cuando el bucle interno llega a c, imprimo un salto de línea (`'\n'`) con `ecall 11`, aumento `t0` y regreso con `j` al inicio del bucle externo. Por último, terminé el programa con `ecall 10`.
+Cuando se completa la fila, imprimo un salto de línea, le sumo 1 a `t0` y regreso con `j` para hacer la siguiente fila, así hasta llegar a f. Al final cierro el programa con `ecall 10`
 
 ---
 
@@ -105,4 +105,4 @@ Ingrese el numero de columnas (c): 5
 *****
 ```
 
-**Comprobación:** Para f = 3 y c = 5 se esperan 3 filas de 5 asteriscos. La ejecución en RARS confirmó esta salida.
+**Comprobación:** Con f = 3 y c = 5 tienen que salir 3 filas de 5 asteriscos. La ejecución en RARS debe confirmar esta salida
