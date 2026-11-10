@@ -1,1 +1,19 @@
+Ejercicio 3 – Operaciones con registros
 
+¿Qué se debe hacer?
+
+Resolver la siguiente expresión utilizando valores previamente definidos en registros:
+
+g = (17a + b + 5c) - [(a - d) + (3e + 3f) + 30]
+
+Valores: a = 4, b = 7, c = 2, d = 3, e = 5, f = 1.
+
+Archivo: ej03.asm
+
+Aquí debes colocar:
+
+La asignación de los valores a los registros.
+
+Las operaciones respetando los paréntesis, sin simplificar la expresión.
+
+La impresión del resultado final.
