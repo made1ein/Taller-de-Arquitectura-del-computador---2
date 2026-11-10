@@ -1,7 +1,7 @@
 
 # Ejercicio 5: Suma de cuatro números
 
-**Responsable:** D'alessandro · **Revisor (PR):** Madelein
+**Responsable:* D'alessandro · **Revisor (PR):* Alejandra
 ---
 ## A · Enunciado
 
